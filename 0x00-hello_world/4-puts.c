@@ -1,9 +1,3 @@
-/*
- *File: 4-puts.c
- *Author: Akw3t3y
- *Description: Prints a string using puts
- */
-
 #include <stdio.h>
 
 /**
@@ -14,10 +8,7 @@
 
 int main(void)
 {
-  /*
-   *Print the string ""Programming is like building a multilingual puzzle"
-   *followed by a new line using the puts function
-   */
+  
   puts("\"Programming is like building a multilingual puzzle");
 
   return (0);
