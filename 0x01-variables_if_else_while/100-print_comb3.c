@@ -2,7 +2,7 @@
 /**
  *main - Entry point
  *
- *Description: Prints all possible different combinations of two digits seperated by a comma and followed by a space
+ *Description: Prints all possible different combos of two digits
  *
  *Return: Always 0 (Success)
  */
