@@ -5,28 +5,32 @@
  *
  * Return: Always 0
  */
-int main(void)
-{
+int main(void) {
     int term1 = 1;       /* First term of the Fibonacci sequence */
     int term2 = 2;       /* Second term of the Fibonacci sequence */
-    int sum = 0;         /* Sum of even-valued terms */
-    int temp;            /* Temporary variable for swapping terms */
+    int nextTerm;        /* Variable to store the next term */
+    long sumEven = 2;    /* Variable to store the sum of even-valued terms */
+    int count;
 
-    printf("%d, %d, ", term1, term2);
+    printf("%d, %d, ", term1, term2);  /* Print the first two terms */
 
-    while (term2 <= 4000000)
-    {
-        if (term2 % 2 == 0)
-            sum += term2;
-
-        temp = term1 + term2;
+    for (count = 3; count <= 50; count++) {
+        nextTerm = term1 + term2;
         term1 = term2;
-        term2 = temp;
+        term2 = nextTerm;
 
-        printf("%d, ", term2);
+        printf("%d", nextTerm);
+
+        if (count < 50) {
+            printf(", ");
+        }
+
+        if (nextTerm % 2 == 0) {
+            sumEven += nextTerm;
+        }
     }
 
-    printf("\nSum of even-valued terms: %d\n", sum);
+    printf("\nSum of even-valued terms: %ld\n", sumEven);
 
     return (0);
 }
