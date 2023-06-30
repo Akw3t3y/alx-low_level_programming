@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main(void)
+{
+int term1 = 1;       // First term of the Fibonacci sequence
+int term2 = 2;       // Second term of the Fibonacci sequence
+int nextTerm = 0;    // Variable to store the next term
+int sum = 2;         // Initialize sum with the value of the second term (2)
+while (nextTerm <= 4000000)
+{
+nextTerm = term1 + term2;
+// Check if the next term is even
+if (nextTerm % 2 == 0)
+sum += nextTerm;
+term1 = term2;
+term2 = nextTerm;
+}
+printf("%d\n", sum);
+return (0);
+}
