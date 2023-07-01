@@ -1,4 +1,5 @@
 #ifndef MAIN_H
 #define MAIN_H
-int _isdigit(int c);
+/* Function prototypes */
+int mul(int a, int b);
 #endif /* MAIN_H */
