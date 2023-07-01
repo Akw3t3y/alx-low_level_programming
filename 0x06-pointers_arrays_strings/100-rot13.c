@@ -9,17 +9,16 @@ char *rot13(char *str)
 {
 char *ptr = str;
 int i;
+char *normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+char *rot13 = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm"; 
 while (*ptr)
 {
-for (i = 0; i < 52; i++)
+for (i = 0; normal[i]; i++)
 {
-if ((*ptr >= 'a' && *ptr <= 'z') || (*ptr >= 'A' && *ptr <= 'Z'))
+if (*ptr == normal[i])
 {
-if ((*ptr >= 'a' && *ptr <= 'm') || (*ptr >= 'A' && *ptr <= 'M'))
-*ptr += 13;
-else
-*ptr -= 13;
-}
+*ptr = rot13[i];
+break;            }
 }
 ptr++;
 }
