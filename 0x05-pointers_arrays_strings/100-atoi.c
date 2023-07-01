@@ -7,19 +7,34 @@
  */
 int _atoi(char *s)
 {
+int i = 0;
 int sign = 1;
 int result = 0;
-int i = 0;
 /* Handle leading signs */
-while (s[i] == '-' || s[i] == '+')
-{
+while (s[i] == '-')
+i++;
+/* Handle the sign */
 if (s[i] == '-')
-sign *= -1;
+{
+sign = -1;
+i++;
+}
+else if (s[i] == '+')
+{
 i++;
 }
 /* Convert string to integer */
 while (s[i] >= '0' && s[i] <= '9')
 {
+/* Check for overflow */
+if ((result * 10) + (s[i] - '0') < result)
+{
+/* Return minimum or maximum integer value on overflow */
+if (sign == -1)
+return (-2147483648);
+else
+return (2147483647);
+}
 result = (result * 10) + (s[i] - '0');
 i++;
 }
