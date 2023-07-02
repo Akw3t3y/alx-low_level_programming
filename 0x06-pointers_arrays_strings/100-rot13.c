@@ -1,26 +1,27 @@
 #include "main.h"
+
 /**
- * rot13 - Encodes a string using ROT13 encryption.
- * @str: The string to be encoded.
+ * rot13 - encodes a string into rot13
+ * @s: string to encode
  *
- * Return: Pointer to the encoded string.
+ * Return: address of s
  */
-char *rot13(char *str)
+char *rot13(char *s)
 {
-char *ptr = str;
-int i;
-char *normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-char *rot13 = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm"; 
-while (*ptr)
-{
-for (i = 0; normal[i]; i++)
-{
-if (*ptr == normal[i])
-{
-*ptr = rot13[i];
-break;            }
-}
-ptr++;
-}
-return (str);
+	int i, j;
+	char a[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char b[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+
+	for (i = 0; *(s + i); i++)
+	{
+		for (j = 0; j < 52; j++)
+		{
+			if (a[j] == *(s + i))
+			{
+				*(s + i) = b[j];
+				break;
+			}
+		}
+	}
+	return (s);
 }
