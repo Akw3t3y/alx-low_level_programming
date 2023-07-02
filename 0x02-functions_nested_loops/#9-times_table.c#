@@ -13,10 +13,9 @@ j = 0;
 while (j <= 9)
 {
 result = i * j;
-if (j == 0)
-{
+if (j == {
 _putchar('0' + result);
-}
+}  
 else if (result < 10)
 {
 _putchar(' ');
