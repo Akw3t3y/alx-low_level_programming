@@ -4,19 +4,37 @@
  */
 void times_table(void)
 {
-int i, j, result;
-for (i = 0; i <= 9; i++)
+int i = 0;
+int j;
+int result;
+while (i <= 9)
 {
-_putchar('0'); /* Print the first digit */
-for (j = 1; j <= 9; j++)
+j = 0;
+while (j <= 9)
+{
+result = i * j;
+if (j == 0)
+{  
+_putchar('0' + result);
+}  
+else if (result < 10)
+{
+_putchar(' ');
+_putchar('0' + result);
+}
+else
+{
+_putchar('0' + result / 10);
+_putchar('0' + result % 10);
+}
+if (j < 9)
 {
 _putchar(',');
 _putchar(' ');
-result = i * j;
-if (result <= 9)
-_putchar(' '); /* Print extra space for single-digit numbers */
-_putchar(result + '0'); /* Print the result */
+}
+j++;
 }
 _putchar('\n');
+i++;
 }
 }
